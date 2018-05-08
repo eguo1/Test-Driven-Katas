@@ -5,6 +5,7 @@ const wrap = require('./wrap.js')
 
 describe('wrap', function () {
   const string = 'this is a test string'
+  const array = string.split(' ')
   const number = 10
   // beforeEach(function() {
   //   const string = 'this is a test string'
@@ -26,5 +27,8 @@ describe('wrap', function () {
   })
   it('can wrap multiple lines of text', function () {
     expect(wrap(string, 4).indexOf('\n')).to.not.equal(wrap(string, 4).lastIndexOf('\n'))
+  })
+  it('does not wrap on full words', function () {
+    expect(wrap(string, 4).split('/\s/').length).to.equal(array.length)
   })
 })
