@@ -1,5 +1,6 @@
 function wrap(str, num) {
-  return str.slice(0, num) + '\n' + str.slice(num)
+  if(str.length) return str.slice(0, num) + '\n' + str.slice(num)
+  else return str
 }
 
 module.exports = wrap

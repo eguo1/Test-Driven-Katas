@@ -21,4 +21,7 @@ describe('wrap', function () {
   it('should handle an empty string passed as a parameter', function () {
     expect(wrap('', number)).to.be.empty
   })
+  it('should handle an existing string with a number parameter of 0', function () {
+    expect(wrap(string, 0).indexOf('\n')).to.be.equal(-1)
+  })
 })
