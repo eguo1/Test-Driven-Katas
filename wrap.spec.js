@@ -24,4 +24,7 @@ describe('wrap', function () {
   it('should handle a number parameter of 0', function () {
     expect(wrap(string, 0).indexOf('\n')).to.be.equal(-1)
   })
+  it('can wrap multiple lines of text', function () {
+    expect(wrap(string, 4).indexOf('\n')).to.not.equal(wrap(string, 4).lastIndexOf('\n'))
+  })
 })
